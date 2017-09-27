@@ -5,25 +5,12 @@ resources:
   source:
     uri: https://github.com/martyca/concourse-tests.git
 
-- name: resource-deploy-webapp
-  type: cf
-  source:
-    api: {{cf-api}}
-    username: {{cf-username}}
-    password: {{cf-password}}
-    organization: {{cf-organization}}
-    space: {{cf-space}}
-    skip_cert_check: true
 jobs:
 - name: job-deploy-webapp
   serial: true
   plan:
   - get: this-git-repo
     trigger: true
-  - put: resource-deploy-webapp
-    params:
-      manifest: this-git-repo/webapp/manifest.yml
-      path: this-git-repo/webapp
   - task: blue-green
     file: this-git-repo/jobs/blue-green.yml
     params:
