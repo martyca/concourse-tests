@@ -34,6 +34,7 @@ jobs:
   public: true
   plan:
   - get: this-git-repo
+    passed: [job-deploy-webapp]
   - task: blue-green
     file: this-git-repo/jobs/blue-green.yml
     params:
