@@ -25,5 +25,8 @@ jobs:
   public: true
   plan:
   - get: this-git-repo
-  - task: deploy-webapp
-    file: this-git-repo/jobs/deploy-webapp.yml
+    trigger: true
+  - put: resource-deploy-webapp
+    params:
+      manifest: this-git-repo/webapp/deploy-webapp.manifest
+      path: this-git-repo/webapp
