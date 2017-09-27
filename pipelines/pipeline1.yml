@@ -28,5 +28,5 @@ jobs:
     trigger: true
   - put: resource-deploy-webapp
     params:
-      manifest: this-git-repo/webapp/deploy-webapp.manifest
+      manifest: this-git-repo/webapp/manifest.yml
       path: this-git-repo/webapp
