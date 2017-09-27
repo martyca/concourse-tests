@@ -1,0 +1,7 @@
+---
+- get: this-git-repo
+  trigger: true
+- put: resource-deploy-webapp
+  params:
+    manifest: this-git-repo/webapp/deploy-webapp.manifest
+    path: this-git-repo/webapp

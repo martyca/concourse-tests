@@ -5,6 +5,15 @@ resources:
   source:
     uri: https://github.com/martyca/concourse-tests.git
 
+- name: resource-deploy-webapp
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: true
 jobs:
 - name: job-hello-world
   public: true
@@ -12,3 +21,9 @@ jobs:
   - get: this-git-repo
   - task: hello-world
     file: this-git-repo/jobs/hello-world.yml
+- name: job-deploy-webapp
+  public: true
+  plan:
+  - get: this-git-repo
+  - task: deploy-webapp
+    file: this-git-repo/jobs/deploy-webapp.yml
