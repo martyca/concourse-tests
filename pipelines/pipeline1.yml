@@ -22,7 +22,7 @@ jobs:
   - task: hello-world
     file: this-git-repo/jobs/hello-world.yml
 - name: job-deploy-webapp
-  public: true
+  serial: true
   plan:
   - get: this-git-repo
     trigger: true
