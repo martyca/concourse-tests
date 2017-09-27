@@ -1,0 +1,14 @@
+---
+resources:
+- name: this-git-repo
+  type: git
+  source:
+    uri: https://github.com/martyca/concourse-tests.git
+
+jobs:
+- name: job-hello-world
+  public: true
+  plan:
+  - get: this-git-repo
+  - task: hello-world
+    file: this-git-repo/jobs/hello-world.yml
