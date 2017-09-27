@@ -2,4 +2,3 @@ applications:
 - name: concourse-app-staged
   memory: 128M
   instances: 1
-  no-route: true
