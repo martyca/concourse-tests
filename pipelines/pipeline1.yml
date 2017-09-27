@@ -30,3 +30,15 @@ jobs:
     params:
       manifest: this-git-repo/webapp/manifest.yml
       path: this-git-repo/webapp
+- name: job-blue-green
+  public: true
+  plan:
+  - get: this-git-repo
+  - task: blue-green
+    file: this-git-repo/jobs/blue-green.yml
+    params:
+      api: {{cf-api}}
+      username: {{cf-username}}
+      password: {{cf-password}}
+      organization: {{cf-organization}}
+      space: {{cf-space}}
