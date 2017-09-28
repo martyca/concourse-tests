@@ -4,5 +4,5 @@ apk update
 apk add curl
 set
 
-json="{\"text\": \"Deployment Succeeded.\", \"username\": \"$slackuser\", \"channel\": \"$slackchannel\", \"icon_emoji\": \"$slackicon\"}"
-curl -s --data-urlencode "payload=$json" $slackurl
+
+# curl -s --data-urlencode "payload={\"text\": \"Deployment Succeeded.\", \"username\": \"$slackuser\", \"channel\": \"$slackchannel\", \"icon_emoji\": \"$slackicon\"}" $slackurl
