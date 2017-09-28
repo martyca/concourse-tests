@@ -20,8 +20,8 @@ jobs:
       organization: {{cf-organization}}
       space: {{cf-space}}
       on_success:
-        task: deploy-failed
-        file: this-git-repo/jobs/deploy-failed.yml
-      on_failure:
         task: deploy-succeeded
         file: this-git-repo/jobs/deploy-succeeded.yml
+      on_failure:
+        task: deploy-failed
+        file: this-git-repo/jobs/deploy-failed.yml
