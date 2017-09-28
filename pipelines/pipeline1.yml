@@ -23,10 +23,10 @@ jobs:
       task: deploy-succeeded
       file: this-git-repo/jobs/deploy-succeeded.yml
       params:
-        slack-url: {{slack-url}}
-        slack-channel: {{slack-channel}}
-        slack-user: {{slack-user}}
-        slack-icon: {{slack-icon}}
+        url: {{slack-url}}
+        channel: {{slack-channel}}
+        user: {{slack-user}}
+        icon: {{slack-icon}}
     on_failure:
       task: deploy-failed
       file: this-git-repo/jobs/deploy-failed.yml
