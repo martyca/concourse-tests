@@ -1,7 +1,7 @@
 #!/bin/bash
 # set
-apk update
-apk add curl
+# apk update
+# apk add curl
 set
 
 
