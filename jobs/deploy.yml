@@ -10,4 +10,4 @@ inputs:
 
 
 run:
-  path: this-git-repo/scripts/blue-green.sh
+  path: this-git-repo/scripts/deploy.sh

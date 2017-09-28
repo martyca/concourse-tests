@@ -11,11 +11,17 @@ jobs:
   plan:
   - get: this-git-repo
     trigger: true
-  - task: blue-green
-    file: this-git-repo/jobs/blue-green.yml
+  - task: task-deploy
+    file: this-git-repo/jobs/deploy.yml
     params:
       api: {{cf-api}}
       username: {{cf-username}}
       password: {{cf-password}}
       organization: {{cf-organization}}
       space: {{cf-space}}
+      on_success:
+        task: deploy-failed
+        file: this-git-repo/jobs/deploy-failed.yml
+      on_failure:
+        task: deploy-succeeded
+        file: this-git-repo/jobs/deploy-succeeded.yml
