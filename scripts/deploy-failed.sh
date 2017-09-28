@@ -2,4 +2,4 @@
 # set
 apk update
 apk add curl
-curl --help
+set
