@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 # set
-apk update
-apk add curl
+# apk update
+# apk add curl
 set
 
-#json="{\"text\": \"Deployment Succeeded.\", \"username\": \"$slack-user\", \"channel\": \"$slack-channel\", \"icon_emoji\": \"$slack-icon\"}"
-#curl -s --data-urlencode "payload=$json" $slack-url
+# json="{\"text\": \"Deployment Succeeded.\", \"username\": \"$slack-user\", \"channel\": \"$slack-channel\", \"icon_emoji\": \"$slack-icon\"}"
+# curl -s --data-urlencode "payload=$json" $slack-url
